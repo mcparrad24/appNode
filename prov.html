@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+<div>
+<h2 class="text-center">Listado de proveedores</h2>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Contacto</th>
+      </tr>
+    </thead>
+    <tbody id="tabla"> 
+      
+    </tbody>
+  </table>
+
+  <script>
+
+    function tablaProv(data){
+        let tab = document.getElementById('tabla')
+        for(let i = 0; i < data.length; i++){
+          let row = `<tr>
+                      <th scope="row">${data[i].idproveedor}</th>
+                      <td>${data[i].nombrecompania}</td>
+                      <td>${data[i].nombrecontacto}</td>
+                    </tr>`
+          tab.innerHTML += row
+        }
+    }
+  </script>
